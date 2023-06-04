@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Update Task -
+{% endblock title %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h1 class="text-center">ToDoList App</h1>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="input-group mb-3">
+                <div class="input-group-text" data-toggle="tooltip" data-placement="bottom" title="Marked as completed">
+                    {{task_edit_form.completed}}
+                </div>
+                {{task_edit_form.title}}
+                <button type="submit" class="btn btn-lg btn-info">Güncelle</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+{% endblock content %}
